@@ -8,8 +8,10 @@ import androidx.navigation.fragment.findNavController
 import com.bumptech.glide.RequestManager
 import com.juarezcode.artbooktesting.R
 import com.juarezcode.artbooktesting.databinding.FragmentArtDetailsBinding
+import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 
+@AndroidEntryPoint
 class ArtDetailsFragment @Inject constructor(
     private val glide: RequestManager
 ) : Fragment(R.layout.fragment_art_details) {
