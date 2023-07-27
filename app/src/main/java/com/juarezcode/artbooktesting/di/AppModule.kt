@@ -32,7 +32,7 @@ object AppModule {
             context,
             ArtDatabase::class.java,
             "art-bok-database"
-        ).build()
+        ).allowMainThreadQueries().build()
     }
 
     @Singleton

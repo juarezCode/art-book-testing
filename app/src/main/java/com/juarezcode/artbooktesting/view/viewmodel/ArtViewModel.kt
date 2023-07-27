@@ -1,5 +1,6 @@
 package com.juarezcode.artbooktesting.view.viewmodel
 
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -13,9 +14,8 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class ArtViewModel @Inject constructor(
-    private val repository: ArtRepositoryInterface
-) : ViewModel() {
+class ArtViewModel @Inject constructor(private val repository: ArtRepositoryInterface) :
+    ViewModel() {
 
     val artList = repository.getArt()
 
@@ -54,10 +54,12 @@ class ArtViewModel @Inject constructor(
             return
         }
 
+        Log.d("year", "year $year")
         val yearInt = try {
             year.toInt()
         } catch (e: Exception) {
-            insertArtMsg.postValue(Resource.error("year should be number", null))
+            e.printStackTrace()
+            insertArtMsg.postValue(Resource.error("year $year should be number", null))
             return
         }
 
