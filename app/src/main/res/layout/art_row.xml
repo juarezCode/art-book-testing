@@ -6,7 +6,7 @@
     android:padding="16dp">
 
     <ImageView
-        android:id="@+id/img"
+        android:id="@+id/imgRow"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:src="@drawable/ic_launcher_background"
@@ -32,7 +32,7 @@
             android:textSize="20sp" />
 
         <TextView
-            android:id="@+id/txtRowYearName"
+            android:id="@+id/txtRowYear"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="year"
